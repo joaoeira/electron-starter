@@ -4,8 +4,8 @@ import { fileURLToPath } from "node:url";
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as Runtime from "effect/Runtime";
 
-import { appRpcHandlers } from "@starter/app-core";
-import { appIpc } from "@starter/app-core/ipc";
+import { appRpcHandlers } from "@starter/core";
+import { appIpc } from "@starter/core/ipc";
 
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string | undefined;
 declare const MAIN_WINDOW_VITE_NAME: string;

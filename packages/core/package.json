@@ -1,5 +1,5 @@
 {
-  "name": "@starter/app-core",
+  "name": "@starter/core",
   "version": "0.0.0",
   "private": true,
   "type": "module",

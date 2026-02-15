@@ -38,7 +38,7 @@ pnpm package      # Build installable artifacts via Electron Forge
 ## Project Layout
 
 - `apps/desktop`: Electron main/preload/renderer app
-- `packages/app-core`: Effect domain and XState stores/machines
+- `packages/core`: Effect domain and XState stores/machines
 - `packages/ui`: Tailwind theme, shadcn config plumbing, Silk wrappers
 - `packages/config`: shared TS/Vitest config
 - `scripts/setup-template.mjs`: one-shot starter bootstrap command

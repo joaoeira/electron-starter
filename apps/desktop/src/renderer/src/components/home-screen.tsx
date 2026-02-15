@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-import { appMachine, uiStore } from "@starter/app-core";
+import { appMachine, uiStore } from "@starter/core";
 import { SilkButton } from "@starter/ui";
 import { createActor } from "xstate";
 

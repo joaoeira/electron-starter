@@ -1,4 +1,4 @@
-import { appContract } from "@starter/app-core";
+import { appContract } from "@starter/core";
 import { createEventSubscriber, createRpcClient } from "electron-effect-rpc/renderer";
 
 export const createIpc = (bridge: Window["desktopApi"]) => ({

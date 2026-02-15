@@ -15,7 +15,7 @@
     "package": "electron-forge make"
   },
   "dependencies": {
-    "@starter/app-core": "workspace:*",
+    "@starter/core": "workspace:*",
     "@starter/ui": "workspace:*",
     "@tanstack/react-router": "1.131.35",
     "@xstate/store-react": "1.0.1",

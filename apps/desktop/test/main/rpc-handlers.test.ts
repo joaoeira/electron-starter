@@ -1,7 +1,7 @@
 import { Effect } from "effect";
 import { describe, expect, it } from "vitest";
 
-import { appRpcHandlers } from "@starter/app-core";
+import { appRpcHandlers } from "@starter/core";
 
 describe("main rpc handlers", () => {
   it("returns bootstrap payload", async () => {
