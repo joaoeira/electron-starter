@@ -1,0 +1,4 @@
+@import "@starter/ui/styles.css";
+
+/* Include utility classes declared in the shared UI package. */
+@source "../../../../../packages/ui/src/**/*.{ts,tsx}";

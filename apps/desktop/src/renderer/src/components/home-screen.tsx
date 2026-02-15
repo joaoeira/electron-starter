@@ -17,9 +17,22 @@ export function HomeScreen() {
   const [error, setError] = useState<string | null>(null);
   const [counter, setCounter] = useState(uiStore.getSnapshot().context.counter);
   const actor = useMemo(() => createActor(appMachine), []);
-  const ipc = useMemo(() => createIpc(window.desktopApi), []);
+  const ipc = useMemo(() => {
+    if (!window.desktopApi) {
+      return null;
+    }
+
+    return createIpc(window.desktopApi);
+  }, []);
 
   useEffect(() => {
+    if (!ipc) {
+      setError(
+        "Preload bridge is unavailable. Confirm the preload script is loading and exposes window.desktopApi.",
+      );
+      return;
+    }
+
     const subscription = uiStore.subscribe((snapshot) => {
       setCounter(snapshot.context.counter);
     });

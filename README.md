@@ -15,6 +15,8 @@ A setup-first, security-hardened Electron starter kit for building desktop apps 
 
 ## Quick Start
 
+Use Node `22.x` (this template enforces it).
+
 ```bash
 pnpm install
 pnpm setup -- --app-name "My App" --app-id "com.example.myapp"
@@ -38,7 +40,7 @@ pnpm package      # Build installable artifacts via Electron Forge
 - `apps/desktop`: Electron main/preload/renderer app
 - `packages/app-core`: Effect domain and XState stores/machines
 - `packages/ui`: Tailwind theme, shadcn config plumbing, Silk wrappers
-- `packages/config`: shared TS/ESLint/Vitest/Prettier config
+- `packages/config`: shared TS/Vitest config
 - `scripts/setup-template.mjs`: one-shot starter bootstrap command
 
 ## shadcn Component Workflow
@@ -67,6 +69,22 @@ Default values replaced by `pnpm setup`:
 - App ID: `com.template.electronstarter`
 
 Use `--force` if you need to re-apply setup after initialization.
+
+## Troubleshooting
+
+If Electron fails to install or Forge cannot find the CLI in a fresh clone:
+
+```bash
+find . -name node_modules -type d -prune -exec rm -rf '{}' +
+pnpm install
+pnpm dev
+```
+
+If the app renders but Tailwind utility classes are not applied, ensure:
+
+1. `@tailwindcss/vite` is installed in `apps/desktop`.
+2. It is included in `apps/desktop/vite.renderer.config.mts`.
+3. Renderer imports `apps/desktop/src/renderer/src/styles.css` (which imports `@starter/ui/styles.css` and `@source` for workspace UI files).
 
 ## Next Step
 

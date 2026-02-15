@@ -30,7 +30,14 @@
     "vitest": "3.2.4"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.0.0 <23.0.0"
   },
-  "packageManager": "pnpm@10.6.2"
+  "packageManager": "pnpm@10.6.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "electron-winstaller",
+      "esbuild"
+    ]
+  }
 }

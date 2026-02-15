@@ -1,4 +1,5 @@
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as Runtime from "effect/Runtime";
@@ -8,6 +9,8 @@ import { appIpc } from "@starter/app-core/ipc";
 
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string | undefined;
 declare const MAIN_WINDOW_VITE_NAME: string;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 let mainWindow: BrowserWindow | null = null;
 let ipcHandle: ReturnType<typeof appIpc.main> | null = null;
