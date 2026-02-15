@@ -1,0 +1,20 @@
+{
+  "extends": "@starter/config/tsconfig/react",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/renderer/src/*"],
+      "@main/*": ["src/main/*"],
+      "@preload/*": ["src/preload/*"]
+    },
+    "types": ["node", "vite/client"]
+  },
+  "include": [
+    "forge.config.ts",
+    "vite.main.config.mts",
+    "vite.preload.config.mts",
+    "vite.renderer.config.mts",
+    "src",
+    "test"
+  ]
+}

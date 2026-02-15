@@ -1,0 +1,41 @@
+{
+  "name": "electron-starter-template",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Setup-first robust Electron starter template",
+  "packageManager": "pnpm@10.6.2",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @starter/desktop dev",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test && pnpm test:root",
+    "test:unit": "pnpm -r --if-present test:unit && pnpm test:root",
+    "test:root": "vitest run --config vitest.config.ts",
+    "test:e2e": "pnpm --filter @starter/desktop test:e2e",
+    "build": "pnpm --filter @starter/desktop build",
+    "package": "pnpm --filter @starter/desktop package",
+    "setup": "node ./scripts/setup-template.mjs"
+  },
+  "devDependencies": {
+    "@starter/config": "workspace:*",
+    "@eslint/js": "9.34.0",
+    "@playwright/test": "1.55.0",
+    "@types/node": "22.17.2",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "@typescript-eslint/eslint-plugin": "8.41.0",
+    "@typescript-eslint/parser": "8.41.0",
+    "typescript-eslint": "8.41.0",
+    "eslint": "9.34.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4"
+  }
+}

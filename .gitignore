@@ -1,0 +1,12 @@
+node_modules
+.pnpm-store
+coverage
+dist
+out
+.tmp
+.DS_Store
+*.log
+playwright-report
+test-results
+apps/desktop/.vite
+apps/desktop/.turbo
