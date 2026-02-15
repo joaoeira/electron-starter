@@ -2,7 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import tailwindcss from "@tailwindcss/vite";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -13,7 +13,7 @@ export default defineConfig({
   root: rendererRoot,
   base: "./",
   plugins: [
-    TanStackRouterVite({
+    tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
       generatedRouteTree: "src/renderer/src/routeTree.gen.ts",
