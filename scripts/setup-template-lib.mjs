@@ -41,7 +41,7 @@ export const validateSetupInput = ({ appName, appId }) => {
 
   if (!appId || !APP_ID_REGEX.test(appId)) {
     throw new Error(
-      "--app-id must be a reverse-domain identifier, for example com.example.desktop"
+      "--app-id must be a reverse-domain identifier, for example com.example.desktop",
     );
   }
 };
@@ -51,7 +51,7 @@ export const applyTemplateSetup = async ({
   appId,
   description,
   force = false,
-  cwd = process.cwd()
+  cwd = process.cwd(),
 }) => {
   validateSetupInput({ appName, appId });
 
@@ -64,9 +64,7 @@ export const applyTemplateSetup = async ({
   const rootPackage = await loadJson(rootPackagePath);
 
   if (!force && rootPackage.name !== DEFAULT_TEMPLATE_NAME) {
-    throw new Error(
-      "Template appears already initialized. Pass --force to re-apply setup values."
-    );
+    throw new Error("Template appears already initialized. Pass --force to re-apply setup values.");
   }
 
   const slug = toSlug(appName);
@@ -87,7 +85,7 @@ export const applyTemplateSetup = async ({
 
   const forgeChanged = await replaceInFile(forgeConfigPath, [
     [DEFAULT_APP_ID, appId],
-    ["electron-starter-template", slug]
+    ["electron-starter-template", slug],
   ]);
   if (forgeChanged) {
     changedFiles.push(forgeConfigPath);
@@ -101,7 +99,7 @@ export const applyTemplateSetup = async ({
   const readmeChanged = await replaceInFile(readmePath, [
     [DEFAULT_PRODUCT_NAME, appName],
     [DEFAULT_TEMPLATE_NAME, slug],
-    [DEFAULT_APP_ID, appId]
+    [DEFAULT_APP_ID, appId],
   ]);
   if (readmeChanged) {
     changedFiles.push(readmePath);
@@ -112,6 +110,6 @@ export const applyTemplateSetup = async ({
     appName,
     appId,
     description: normalizedDescription,
-    slug
+    slug,
   };
 };

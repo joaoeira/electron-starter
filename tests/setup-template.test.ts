@@ -12,16 +12,16 @@ const seedWorkspace = async (cwd: string) => {
     JSON.stringify(
       {
         name: "electron-starter-template",
-        description: "Setup-first robust Electron starter template"
+        description: "Setup-first robust Electron starter template",
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 
   await writeFile(
     path.join(cwd, "README.md"),
-    "Electron Starter Template\nelectron-starter-template\ncom.template.electronstarter\n"
+    "Electron Starter Template\nelectron-starter-template\ncom.template.electronstarter\n",
   );
 
   await writeFile(
@@ -30,21 +30,21 @@ const seedWorkspace = async (cwd: string) => {
       {
         name: "@starter/desktop",
         productName: "Electron Starter Template",
-        description: "A robust Electron starter app"
+        description: "A robust Electron starter app",
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 
   await writeFile(
     path.join(cwd, "apps/desktop/forge.config.ts"),
-    "appBundleId: \"com.template.electronstarter\", executableName: \"electron-starter-template\""
+    'appBundleId: "com.template.electronstarter", executableName: "electron-starter-template"',
   );
 
   await writeFile(
     path.join(cwd, "apps/desktop/src/main/index.ts"),
-    "title: \"Electron Starter Template\""
+    'title: "Electron Starter Template"',
   );
 };
 
@@ -58,7 +58,7 @@ describe("setup-template", () => {
       cwd: tempDir,
       appName: "Acme Desktop",
       appId: "com.acme.desktop",
-      description: "Acme productivity app"
+      description: "Acme productivity app",
     });
 
     expect(result.slug).toBe("acme-desktop");
@@ -67,7 +67,7 @@ describe("setup-template", () => {
     expect(rootPackage.name).toBe("acme-desktop");
 
     const desktopPackage = JSON.parse(
-      await readFile(path.join(tempDir, "apps/desktop/package.json"), "utf8")
+      await readFile(path.join(tempDir, "apps/desktop/package.json"), "utf8"),
     );
     expect(desktopPackage.productName).toBe("Acme Desktop");
 

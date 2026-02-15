@@ -8,13 +8,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe("preload security", () => {
   it("uses a constrained bridge global and avoids raw ipc exposure", () => {
-    const preloadSource = readFileSync(
-      path.join(__dirname, "../../src/preload/index.ts"),
-      "utf8"
-    );
+    const preloadSource = readFileSync(path.join(__dirname, "../../src/preload/index.ts"), "utf8");
 
-    expect(preloadSource).toContain("appIpc.preload({ global: \"desktopApi\" }).expose()");
+    expect(preloadSource).toContain('appIpc.preload({ global: "desktopApi" }).expose()');
     expect(preloadSource).not.toContain("window.ipcRenderer");
-    expect(preloadSource).not.toContain("exposeInMainWorld(\"ipcRenderer\"");
+    expect(preloadSource).not.toContain('exposeInMainWorld("ipcRenderer"');
   });
 });

@@ -20,12 +20,12 @@ export const SilkButton = React.forwardRef<HTMLButtonElement, NativeButtonProps>
         className={cn(
           "inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground",
           "transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-          className
+          className,
         )}
         {...props}
       />
     );
-  }
+  },
 );
 
 SilkButton.displayName = "SilkButton";

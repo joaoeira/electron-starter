@@ -22,8 +22,8 @@ const createMainWindow = (): BrowserWindow => {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
-      sandbox: true
-    }
+      sandbox: true,
+    },
   });
 
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
@@ -42,7 +42,7 @@ app.whenReady().then(() => {
     ipcMain,
     handlers: appRpcHandlers,
     runtime: Runtime.defaultRuntime,
-    getWindow: () => mainWindow
+    getWindow: () => mainWindow,
   });
 
   ipcHandle.start();

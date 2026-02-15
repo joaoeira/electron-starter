@@ -22,7 +22,7 @@ const options = {
   appName: readFlag("--app-name"),
   appId: readFlag("--app-id"),
   description: readFlag("--description"),
-  force: args.includes("--force")
+  force: args.includes("--force"),
 };
 
 applyTemplateSetup(options)

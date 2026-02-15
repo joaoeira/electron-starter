@@ -25,6 +25,9 @@ pnpm dev
 
 ```bash
 pnpm dev          # Run Electron app in dev mode
+pnpm format       # Format the repo with oxfmt
+pnpm format:check # Check formatting in CI mode
+pnpm lint         # Lint with oxlint
 pnpm test         # Run unit/integration/contract tests
 pnpm test:e2e     # Run Playwright Electron smoke tests
 pnpm package      # Build installable artifacts via Electron Forge

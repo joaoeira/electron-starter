@@ -3,7 +3,7 @@ import { defineContract, rpc } from "electron-effect-rpc/contract";
 
 export const AppRpcError = S.Struct({
   code: S.String,
-  message: S.String
+  message: S.String,
 });
 
 export const GetBootstrapData = rpc(
@@ -12,12 +12,12 @@ export const GetBootstrapData = rpc(
   S.Struct({
     appName: S.String,
     message: S.String,
-    timestamp: S.String
+    timestamp: S.String,
   }),
-  AppRpcError
+  AppRpcError,
 );
 
 export const appContract = defineContract({
   methods: [GetBootstrapData] as const,
-  events: [] as const
+  events: [] as const,
 });

@@ -49,8 +49,8 @@ export function HomeScreen() {
         </p>
         <h1 className="text-3xl font-semibold text-foreground">Desktop App Shell</h1>
         <p className="text-sm text-muted-foreground">
-          TanStack Router, Effect RPC, XState, shadcn-ready Tailwind, and Silk wrappers are wired and
-          ready.
+          TanStack Router, Effect RPC, XState, shadcn-ready Tailwind, and Silk wrappers are wired
+          and ready.
         </p>
       </header>
 
@@ -70,7 +70,9 @@ export function HomeScreen() {
               </p>
             </div>
           ) : (
-            <p className="mt-2 text-sm text-muted-foreground">Loading bootstrap data from main...</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Loading bootstrap data from main...
+            </p>
           )}
           {error ? <p className="mt-2 text-sm text-destructive">{error}</p> : null}
         </div>
@@ -79,7 +81,9 @@ export function HomeScreen() {
           <h2 className="text-sm font-semibold uppercase text-muted-foreground">Store Example</h2>
           <p className="mt-2 text-sm">Counter: {counter}</p>
           <div className="mt-3 flex gap-2">
-            <SilkButton onClick={() => uiStore.send({ type: "increment", by: 1 })}>Increment</SilkButton>
+            <SilkButton onClick={() => uiStore.send({ type: "increment", by: 1 })}>
+              Increment
+            </SilkButton>
             <SilkButton
               className="bg-secondary text-secondary-foreground"
               onClick={() => uiStore.send({ type: "resetCounter" })}

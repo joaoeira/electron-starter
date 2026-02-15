@@ -1,0 +1,6 @@
+node_modules
+coverage
+dist
+out
+apps/desktop/.vite
+apps/desktop/src/renderer/src/routeTree.gen.ts

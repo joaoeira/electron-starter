@@ -53,9 +53,9 @@
 }
 
 body {
-  background: radial-gradient(circle at 15% 15%, #dbeafe 0, transparent 45%),
-    radial-gradient(circle at 85% 80%, #cffafe 0, transparent 40%),
-    var(--color-background);
+  background:
+    radial-gradient(circle at 15% 15%, #dbeafe 0, transparent 45%),
+    radial-gradient(circle at 85% 80%, #cffafe 0, transparent 40%), var(--color-background);
   color: var(--color-foreground);
   font-family: "Spline Sans", "Avenir Next", "Segoe UI", sans-serif;
   min-height: 100vh;

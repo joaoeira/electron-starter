@@ -11,20 +11,20 @@ describe("renderer integration", () => {
       data: {
         appName: "Electron Starter Template",
         message: "Renderer connected to main through typed Effect RPC",
-        timestamp: "2026-02-15T00:00:00.000Z"
-      }
+        timestamp: "2026-02-15T00:00:00.000Z",
+      },
     });
 
     const subscribe = vi.fn().mockReturnValue(() => undefined);
 
     Object.defineProperty(window, "desktopApi", {
       configurable: true,
-      value: { invoke, subscribe }
+      value: { invoke, subscribe },
     });
 
     const router = createRouter({
       routeTree,
-      history: createHashHistory()
+      history: createHashHistory(),
     });
 
     render(<RouterProvider router={router} />);

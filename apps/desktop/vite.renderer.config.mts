@@ -17,16 +17,16 @@ export default defineConfig({
       target: "react",
       autoCodeSplitting: true,
       generatedRouteTree: "src/renderer/src/routeTree.gen.ts",
-      routesDirectory: "src/renderer/src/routes"
-    })
+      routesDirectory: "src/renderer/src/routes",
+    }),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(rendererRoot, "src")
-    }
+      "@": path.resolve(rendererRoot, "src"),
+    },
   },
   build: {
     outDir: path.resolve(__dirname, ".vite/renderer/main_window"),
-    emptyOutDir: false
-  }
+    emptyOutDir: false,
+  },
 });

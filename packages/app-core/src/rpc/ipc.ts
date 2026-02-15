@@ -6,13 +6,13 @@ export const appIpc = createIpcKit({
   contract: appContract,
   channelPrefix: {
     rpc: "rpc/",
-    event: "event/"
+    event: "event/",
   },
   bridge: {
-    global: "desktopApi"
+    global: "desktopApi",
   },
   decode: {
     rpc: "envelope",
-    events: "safe"
-  }
+    events: "safe",
+  },
 });

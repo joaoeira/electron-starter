@@ -14,23 +14,23 @@ const bootstrapActor = fromPromise(async () => {
 export const appMachine = setup({
   types: {
     context: {} as AppMachineContext,
-    events: {} as AppMachineEvents
+    events: {} as AppMachineEvents,
   },
   actors: {
-    bootstrapActor
-  }
+    bootstrapActor,
+  },
 }).createMachine({
   id: "appBoot",
   initial: "idle",
   context: {
     message: null,
-    error: null
+    error: null,
   },
   states: {
     idle: {
       on: {
-        BOOT: "loading"
-      }
+        BOOT: "loading",
+      },
     },
     loading: {
       invoke: {
@@ -39,27 +39,27 @@ export const appMachine = setup({
           target: "ready",
           actions: assign({
             message: ({ event }) => event.output,
-            error: () => null
-          })
+            error: () => null,
+          }),
         },
         onError: {
           target: "error",
           actions: assign({
             error: ({ event }) => String(event.error),
-            message: () => null
-          })
-        }
-      }
+            message: () => null,
+          }),
+        },
+      },
     },
     ready: {
       on: {
-        BOOT: "loading"
-      }
+        BOOT: "loading",
+      },
     },
     error: {
       on: {
-        RETRY: "loading"
-      }
-    }
-  }
+        RETRY: "loading",
+      },
+    },
+  },
 });

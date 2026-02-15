@@ -2,7 +2,7 @@ export const app = {
   whenReady: () => Promise.resolve(),
   on: () => undefined,
   quit: () => undefined,
-  getVersion: () => "0.0.0"
+  getVersion: () => "0.0.0",
 };
 
 export class BrowserWindow {
@@ -25,21 +25,21 @@ export class BrowserWindow {
   }
 
   webContents = {
-    send: (_channel: string, _payload: unknown) => undefined
+    send: (_channel: string, _payload: unknown) => undefined,
   };
 }
 
 export const ipcMain = {
   handle: (_channel: string, _listener: unknown) => undefined,
-  removeHandler: (_channel: string) => undefined
+  removeHandler: (_channel: string) => undefined,
 };
 
 export const contextBridge = {
-  exposeInMainWorld: (_name: string, _value: unknown) => undefined
+  exposeInMainWorld: (_name: string, _value: unknown) => undefined,
 };
 
 export const ipcRenderer = {
   invoke: async (_channel: string, _payload: unknown) => ({ type: "success", data: {} }),
   on: (_channel: string, _listener: unknown) => undefined,
-  removeListener: (_channel: string, _listener: unknown) => undefined
+  removeListener: (_channel: string, _listener: unknown) => undefined,
 };

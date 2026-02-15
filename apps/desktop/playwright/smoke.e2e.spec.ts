@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 test("desktop boot smoke", async () => {
   const app = await electron.launch({
-    args: [path.join(__dirname, "../../.vite/build/main.js")]
+    args: [path.join(__dirname, "../../.vite/build/main.js")],
   });
 
   const page = await app.firstWindow();

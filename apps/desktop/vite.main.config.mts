@@ -8,10 +8,10 @@ export default defineConfig({
     lib: {
       entry: "src/main/index.ts",
       formats: ["es"],
-      fileName: () => "main.js"
+      fileName: () => "main.js",
     },
     rollupOptions: {
-      external: ["electron", ...builtinModules, ...builtinModules.map((m) => `node:${m}`)]
-    }
-  }
+      external: ["electron", ...builtinModules, ...builtinModules.map((m) => `node:${m}`)],
+    },
+  },
 });

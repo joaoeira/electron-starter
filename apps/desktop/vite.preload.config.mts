@@ -8,10 +8,10 @@ export default defineConfig({
     lib: {
       entry: "src/preload/index.ts",
       formats: ["es"],
-      fileName: () => "preload.js"
+      fileName: () => "preload.js",
     },
     rollupOptions: {
-      external: ["electron", ...builtinModules, ...builtinModules.map((m) => `node:${m}`)]
-    }
-  }
+      external: ["electron", ...builtinModules, ...builtinModules.map((m) => `node:${m}`)],
+    },
+  },
 });

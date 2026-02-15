@@ -4,10 +4,10 @@ import { createEventSubscriber, createRpcClient } from "electron-effect-rpc/rend
 export const createIpc = (bridge: Window["desktopApi"]) => ({
   client: createRpcClient(appContract, {
     invoke: bridge.invoke,
-    rpcDecodeMode: "envelope"
+    rpcDecodeMode: "envelope",
   }),
   events: createEventSubscriber(appContract, {
     subscribe: bridge.subscribe,
-    decodeMode: "safe"
-  })
+    decodeMode: "safe",
+  }),
 });

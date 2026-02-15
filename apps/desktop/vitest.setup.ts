@@ -10,16 +10,16 @@ Object.defineProperty(window, "matchMedia", {
     removeListener: () => undefined,
     addEventListener: () => undefined,
     removeEventListener: () => undefined,
-    dispatchEvent: () => false
-  })
+    dispatchEvent: () => false,
+  }),
 });
 
 if (!("CSS" in window)) {
   Object.defineProperty(window, "CSS", {
     writable: true,
     value: {
-      supports: () => false
-    }
+      supports: () => false,
+    },
   });
 } else {
   window.CSS.supports ??= () => false;

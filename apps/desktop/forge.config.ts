@@ -10,33 +10,28 @@ const config = {
   packagerConfig: {
     asar: true,
     appBundleId: "com.template.electronstarter",
-    executableName: "electron-starter-template"
+    executableName: "electron-starter-template",
   },
   rebuildConfig: {},
-  makers: [
-    new MakerSquirrel({}),
-    new MakerZIP({}, ["darwin"]),
-    new MakerDeb({}),
-    new MakerRpm({})
-  ],
+  makers: [new MakerSquirrel({}), new MakerZIP({}, ["darwin"]), new MakerDeb({}), new MakerRpm({})],
   plugins: [
     new VitePlugin({
       build: [
         {
           entry: "src/main/index.ts",
-          config: "vite.main.config.mts"
+          config: "vite.main.config.mts",
         },
         {
           entry: "src/preload/index.ts",
-          config: "vite.preload.config.mts"
-        }
+          config: "vite.preload.config.mts",
+        },
       ],
       renderer: [
         {
           name: "main_window",
-          config: "vite.renderer.config.mts"
-        }
-      ]
+          config: "vite.renderer.config.mts",
+        },
+      ],
     }),
     new FusesPlugin({
       version: FuseVersion.V1,
@@ -45,9 +40,9 @@ const config = {
       [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
       [FuseV1Options.EnableNodeCliInspectArguments]: false,
       [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
-      [FuseV1Options.OnlyLoadAppFromAsar]: true
-    })
-  ]
+      [FuseV1Options.OnlyLoadAppFromAsar]: true,
+    }),
+  ],
 };
 
 export default config;
