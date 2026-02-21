@@ -20,7 +20,7 @@
     "@tanstack/react-router": "1.131.35",
     "@xstate/store-react": "1.0.1",
     "effect": "3.10.19",
-    "electron-effect-rpc": "0.3.0",
+    "electron-effect-rpc": "0.5.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "tailwindcss": "4.1.12",

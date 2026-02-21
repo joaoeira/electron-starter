@@ -45,7 +45,7 @@ app.whenReady().then(() => {
     ipcMain,
     handlers: appRpcHandlers,
     runtime: Runtime.defaultRuntime,
-    getWindow: () => mainWindow,
+    getWindows: () => (mainWindow ? [mainWindow] : []),
   });
 
   ipcHandle.start();

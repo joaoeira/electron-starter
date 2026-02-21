@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { appMachine, uiStore } from "@starter/core";
 import { SilkButton } from "@starter/ui";
+import * as Effect from "effect/Effect";
 import { createActor } from "xstate";
 
 import { createIpc } from "../lib/ipc";
@@ -40,8 +41,7 @@ export function HomeScreen() {
     actor.start();
     actor.send({ type: "BOOT" });
 
-    void ipc.client
-      .GetBootstrapData()
+    void Effect.runPromise(ipc.client.GetBootstrapData())
       .then((result) => setBootstrapData(result))
       .catch((reason: unknown) => {
         const message = reason instanceof Error ? reason.message : String(reason);
