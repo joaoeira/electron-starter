@@ -54,8 +54,8 @@ importers:
         specifier: 3.10.19
         version: 3.10.19
       electron-effect-rpc:
-        specifier: 0.5.0
-        version: 0.5.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0)
+        specifier: 0.6.0
+        version: 0.6.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0)
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -145,8 +145,8 @@ importers:
         specifier: 3.10.19
         version: 3.10.19
       electron-effect-rpc:
-        specifier: 0.5.0
-        version: 0.5.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0)
+        specifier: 0.6.0
+        version: 0.6.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0)
       xstate:
         specifier: 5.19.3
         version: 5.19.3
@@ -1885,8 +1885,8 @@ packages:
   effect@3.10.19:
     resolution: {integrity: sha512-Bc+unZVpHQ/0QkydshNk97OjDXT17Y1M4rBjDZaEPjD6YmlcZxhadEo325OfdPQKWCKEHTdRGtX8/bfQ0RLTIw==}
 
-  electron-effect-rpc@0.5.0:
-    resolution: {integrity: sha512-RmCs+7UW3G1B+1Jd0Se7omqKGy8O9jPF3bEVVDMeHOa93Sf2p+Bg/qw9DgJ3gLyX72R0UkYEiejR4O9LsgBsAQ==}
+  electron-effect-rpc@0.6.0:
+    resolution: {integrity: sha512-Hi9x6kri4LGtpJLtQh6ri04vNH1syHErufoxzBetdUq1ZAUproMMRyQrAWOOMynlXbKgsAdu05TvToHLCWeX+A==}
     peerDependencies:
       '@effect/schema': '>=0.69.0'
       effect: '>=3.0.0'
@@ -5193,7 +5193,7 @@ snapshots:
     dependencies:
       fast-check: 3.23.2
 
-  electron-effect-rpc@0.5.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0):
+  electron-effect-rpc@0.6.0(@effect/schema@0.69.0(effect@3.10.19))(effect@3.10.19)(electron@38.0.0):
     dependencies:
       '@effect/schema': 0.69.0(effect@3.10.19)
       effect: 3.10.19
